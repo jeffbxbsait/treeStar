@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace treeStar
+// https://docs.microsoft.com/en-us/dotnet/api/system.console.read?view=netframework-4.7.2
 {
     class Program
     {
