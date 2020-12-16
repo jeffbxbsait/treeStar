@@ -10,7 +10,7 @@ namespace treeStar
     {
         static void Main(string[] args)
         {
-            string star = *;
+            string star = "*";
             string userInput = "";
             do
             {
@@ -21,7 +21,23 @@ namespace treeStar
                 if (IsInteger(userInput))
                 {
                     Console.WriteLine("Entered valid integer\n");
-
+                    height = Convert.ToInt32(userInput);
+                    if (height < 2 || height > 100 )
+                    {
+                        Console.WriteLine("Lets keep it between 2 and 100");
+                    }
+                    else
+                    {
+                        // spaces and stars to start
+                        int spaces = height / 2;
+                        int stars = 1;
+                        for (int i = 1; i < height; i++)
+                        {
+                            Console.WriteLine(spaces + star);
+                            // updated stars and spaces
+                            if (spaces.Length > 1)
+                        }
+                    }
                 }   
                 else
                 {
@@ -29,6 +45,13 @@ namespace treeStar
                 }
 
             } while (userInput != "");
+
+ }
+        // print a bunch of the same char
+        public static string ManyCharsToString(int num, char c)
+        {
+            string returnString = "";
+            for (int i, )
         }
 
         // Yolands validation example
