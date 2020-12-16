@@ -10,49 +10,53 @@ namespace treeStar
     {
         static void Main(string[] args)
         {
-            string star = "*";
-            string userInput = "";
+            string userInput = "1";
             do
             {
-                Console.WriteLine("How Tall do you want your tree?\n:>");
+                Console.ForegroundColor = ConsoleColor.Blue;
+                Console.WriteLine("How Tall do you want your tree?", Console.ForegroundColor);
+                Console.Write(">", Console.ForegroundColor);
                 userInput = Console.ReadLine();
                 int height = 0;
 
                 if (IsInteger(userInput))
                 {
-                    Console.WriteLine("Entered valid integer\n");
                     height = Convert.ToInt32(userInput);
                     if (height < 2 || height > 100 )
-                    {
-                        Console.WriteLine("Lets keep it between 2 and 100");
+                    { 
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.WriteLine("Lets keep it between 2 and 100", Console.ForegroundColor);
                     }
                     else
                     {
                         // spaces and stars to start
-                        int spaces = height / 2;
+                        int spaces = height;
                         int stars = 1;
-                        for (int i = 1; i < height; i++)
+                        for (int i = 0; i < height; i++)
                         {
-                            Console.WriteLine(spaces + star);
-                            // updated stars and spaces
-                            if (spaces.Length > 1)
+                            Console.ForegroundColor = ConsoleColor.Green;
+                            if (i == 0)
+                            {
+                                Console.ForegroundColor = ConsoleColor.Red;
+                            }
+                            StringBuilder line = new StringBuilder();
+                            line.Append(' ', spaces).Append('*', stars);
+                            Console.WriteLine(line.ToString(), Console.ForegroundColor);
+                            spaces--;
+                            stars += 2;
                         }
                     }
                 }   
                 else
                 {
-                    Console.WriteLine("Entered an invalid integer\n");
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("Entered an invalid integer\n", Console.ForegroundColor);
                 }
 
             } while (userInput != "");
 
  }
-        // print a bunch of the same char
-        public static string ManyCharsToString(int num, char c)
-        {
-            string returnString = "";
-            for (int i, )
-        }
+
 
         // Yolands validation example
         public static bool IsInteger(string input)
