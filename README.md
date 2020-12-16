@@ -2,4 +2,6 @@
 
 Windows Console program that will make a colored Christmas tree. with stars
 Very simple example of colors and user validation.
-![Screen Shot](/treeStar/images/example.png)
+
+
+![Screen Shot](https://github.com/jeffbxbsait/treeStar/treeStar/example.png?raw=true)
