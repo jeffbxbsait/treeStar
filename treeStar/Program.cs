@@ -14,16 +14,15 @@ namespace treeStar
             do
             {
                 Console.ForegroundColor = ConsoleColor.Blue;
-                Console.WriteLine("How Tall do you want your tree?", Console.ForegroundColor);
-                Console.Write(">", Console.ForegroundColor);
+                Console.Write("How Tall do you want your tree? >", Console.ForegroundColor);
                 userInput = Console.ReadLine();
                 int height = 0;
 
                 if (IsInteger(userInput))
                 {
                     height = Convert.ToInt32(userInput);
-                    if (height < 2 || height > 100 )
-                    { 
+                    if (height < 2 || height > 100)
+                    {
                         Console.ForegroundColor = ConsoleColor.Red;
                         Console.WriteLine("Lets keep it between 2 and 100", Console.ForegroundColor);
                     }
@@ -35,10 +34,9 @@ namespace treeStar
                         for (int i = 0; i < height; i++)
                         {
                             Console.ForegroundColor = ConsoleColor.Green;
-                            if (i == 0)
-                            {
-                                Console.ForegroundColor = ConsoleColor.Red;
-                            }
+                            if (i == 0) { Console.ForegroundColor = ConsoleColor.Red; }
+                            if (i % 3 == 0) { Console.ForegroundColor = ConsoleColor.Yellow; }
+                            if (i % 7 == 0) { Console.ForegroundColor = ConsoleColor.Magenta; }
                             StringBuilder line = new StringBuilder();
                             line.Append(' ', spaces).Append('*', stars);
                             Console.WriteLine(line.ToString(), Console.ForegroundColor);
@@ -46,7 +44,7 @@ namespace treeStar
                             stars += 2;
                         }
                     }
-                }   
+                }
                 else
                 {
                     Console.ForegroundColor = ConsoleColor.Red;
@@ -55,7 +53,7 @@ namespace treeStar
 
             } while (userInput != "");
 
- }
+        }
 
 
         // Yolands validation example
@@ -65,7 +63,7 @@ namespace treeStar
             if (Int32.TryParse(input, out myNum))
             {
                 return true;
-            } 
+            }
             else
             {
                 return false;
