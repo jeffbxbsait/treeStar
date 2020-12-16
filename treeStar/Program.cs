@@ -56,7 +56,7 @@ namespace treeStar
         }
 
 
-        // Yolandas validation example
+        // Jolanta's validation example
         public static bool IsInteger(string input)
         {
             int myNum;
